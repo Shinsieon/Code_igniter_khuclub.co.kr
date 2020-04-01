@@ -1,0 +1,71 @@
+body, html{
+    margin: 0;
+}#wrap{
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+}
+#container{ 
+    position: relative;
+    float: none;
+    margin:0 auto;
+    display: flex;
+}
+#member_table{
+    table-layout: fixed;
+
+}
+@media (max-width:425px){
+    #member_table{
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 800px){
+    #wrap{
+        min-width: 1024px;
+    }
+    .object_box{
+        min-width: 600px;
+    }
+}
+@media screen and (max-width: 800px){
+    #wrap{
+        min-width: 800px;
+    }
+    .object_box{
+        min-width: 600px;
+    }
+}
+.nav{
+    position: relative;
+}
+#pwfield {
+    text-align: center;
+}
+#container #content{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+.object_box{
+    padding: 16px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    position: relative;
+    height: auto;
+    min-width: 800px;
+}
+.card_layout{
+    margin:20px;
+    display:flex;
+    justify-content: center;
+}
+.card_layout .item{
+    margin:10px;
+    border: 1px solid #eee;
+    width: 100px;
+    height: 200px;
+}
