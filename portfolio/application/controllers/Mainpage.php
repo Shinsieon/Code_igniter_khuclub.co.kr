@@ -9,8 +9,11 @@ class Mainpage extends CI_Controller {
         
     }
     function showpictures(){
-        $this->load->helper('alert');
-        $country = $this->input->get('value',TRUE);
+        //$this->load->helper('Alert');
+        $country = $this->input->GET('value',TRUE);
+        $msg = $this->input->GET('msg', TRUE);
+        var_dump($msg);
+        $ment = "";
         switch($country){
             case "india" :
                 $ment = "대학 동기인 친구와 15일간 갔던 인도 배낭 여행, 가는 곳마다 사기를 당하고 한국인을 지갑처럼 대하는
@@ -33,11 +36,9 @@ class Mainpage extends CI_Controller {
                 $ment = "대만";
             break;
 
-
-
         }
         ?>
-        <link rel= "stylesheet" href="/portfolio/assets/mainpage.css" type="text/css">
+        <link rel= "stylesheet" href="/assets/mainpage.css" type="text/css">
     
         <div class="pop-header">
             <h4><?=$ment?></h4>
@@ -45,7 +46,7 @@ class Mainpage extends CI_Controller {
         </div>
         <div class="pop-content">
             <div id="img-wrap">
-            <?php $dir = $_SERVER['DOCUMENT_ROOT']."/portfolio/images/$country";
+            <?php $dir = $_SERVER['DOCUMENT_ROOT']."/images/$country";
             $handle = opendir($dir);
             $files=array();
             while(false !== ($filename =readdir($handle))){
@@ -59,7 +60,7 @@ class Mainpage extends CI_Controller {
             closedir($handle);
             foreach($files as $f){
                 ?>
-                <img style="width:200px;height: 200px;" src="/portfolio/images/<?=$country?>/<?=$f?>">
+                <img style="width:200px;height: 200px;" src="/images/<?=$country?>/<?=$f?>">
             <?php     
             }
                 ?>

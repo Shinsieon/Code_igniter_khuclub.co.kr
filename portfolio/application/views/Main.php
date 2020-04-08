@@ -2,10 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" href="/portfolio/assets/mainpage.css" type="text/css">
-    <link rel= "stylesheet" href="/portfolio/assets/jquery-jvectormap-2.0.5.css" type="text/css">
-    
+    <link rel= "stylesheet" href="/assets/mainpage.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Oxanium|PT+Sans&display=swap" rel="stylesheet">
+    
     <script src="/assets/jquery-3.4.1.min.js" type="text/javascript"></script>
     <title>Document</title>
     <script>
@@ -29,7 +28,10 @@ var speed = 700;    // 스크롤 스피드 수치로 사용할 변수
                 $.ajax({
                     url: 'Mainpage/showpictures',
                     type: 'GET',
-                    data: {"value" : $(this).attr('value')},
+                    data: {"value" : $(this).attr('value'),
+                    "msg" : "시바",
+                    "csrf_token" : $('#csrf_token').val(),
+                    },
                     dataType: "html",
                     complete : function(xhr, textStatus){
                         if(textStatus == 'success'){
@@ -48,6 +50,9 @@ var speed = 700;    // 스크롤 스피드 수치로 사용할 변수
 </script>
 </head>
 <body>
+<form>
+<input type="hidden" id="<?= $this->security->get_csrf_token_name() ?>" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />  
+</form>
 <div class="popup">
     <div id="pop-container">
     </div>
@@ -70,7 +75,7 @@ var speed = 700;    // 스크롤 스피드 수치로 사용할 변수
         <div class="object-box" style="min-height:600px; text-align:center;">
             <div id="myprofile">
                 <div id="profilepic">
-                    <img style="height:200px;width:200px;"src="/portfolio/images/profile.jpg"></img>
+                    <img style="height:200px;width:200px;"src="/images/profile.jpg"></img>
                 </div>
                 <div id="title">
                     <h5>SHIN SIE ON</h5>
@@ -98,7 +103,7 @@ var speed = 700;    // 스크롤 스피드 수치로 사용할 변수
                 </div>
             </div>
             <div class="img">
-                    <img style="width:100%;height:100%;"src="/portfolio/images/khu41.jpg">
+                    <img style="width:100%;height:100%;"src="/images/khu41.jpg">
             </div>
         </div>
     </div>
@@ -106,7 +111,7 @@ var speed = 700;    // 스크롤 스피드 수치로 사용할 변수
         
         <div id="journey" class="object-box">
         <h2>TRAVEL MAP</h2>
-            <img style="width:100%;height:600px"src="/portfolio/images/worldmap.png">
+            <img style="width:100%;height:600px"src="/images/worldmap.png">
             <div class="country-box">
             <button class="country" value="india"  style="background-color: #FFBC42;"id="india_btn">INDIA</button>
             <button class="country" value="jeju" style="background-color: #EC7357;"id="JEJU_btn">JEJU</button>
