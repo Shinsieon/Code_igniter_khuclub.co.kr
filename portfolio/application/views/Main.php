@@ -26,7 +26,7 @@ var speed = 700;    // 스크롤 스피드 수치로 사용할 변수
      var posY;
         $('.country').click(function(e) {
                 $.ajax({
-                    url: 'Mainpage/showpictures',
+                    url: '/portfolio/mainpage/showpictures',
                     type: 'GET',
                     data: {"value" : $(this).attr('value'),
                     "msg" : "시바",
@@ -37,6 +37,9 @@ var speed = 700;    // 스크롤 스피드 수치로 사용할 변수
                         if(textStatus == 'success'){
                             $('#pop-container').html(xhr.responseText);
                         }
+                    },
+                    error:function(request,status,error){
+                    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
                     }
                 });
             
