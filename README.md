@@ -59,8 +59,8 @@ _Note: This is only a navigation guide for the specification, and does not defin
 - `PHP CodeIgniter`, `Jquery`, `Mysql Database`
 
 ### Preview
-[![image](https://user-images.githubusercontent.com/56333934/119217060-a2cbc200-bb12-11eb-8335-ea252bf90013.png)
-]
+![image](https://user-images.githubusercontent.com/56333934/119217060-a2cbc200-bb12-11eb-8335-ea252bf90013.png)
+
 [클릭하여 영상보기](https://youtu.be/HC85-VIkuB8)
 
 코로나로 인해 서비스를 하고 있지 않은 관계로 도메인 연장을 하지 않고 있습니다. 
